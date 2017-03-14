@@ -129,7 +129,8 @@ header {
   padding: 10px 0; }
 
 .slider {
-  margin-top: 67px; }
+  margin-top: 67px;
+  overflow: hidden; }
   .slider__item {
     background-size: cover;
     background-repeat: no-repeat; }
