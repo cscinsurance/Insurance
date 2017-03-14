@@ -1,0 +1,35 @@
+a {
+  transition: all .3s;
+}
+
+.view-more {
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background: #7b5fa5;
+  color: #d9d9d9;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    outline: none;
+  }
+}
+
+.icon {
+  &:before {
+    font-family: fontawesome;
+  }
+}
+
+.icon-twitter {
+  &:before {
+    content: '\f099';
+  }
+}
+
+.icon-face{
+  &:before {
+    content: '\f230';
+  }
+}

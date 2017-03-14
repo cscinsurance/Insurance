@@ -1,0 +1,13 @@
+{
+    "name": "",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "start": "node server"
+    },
+    "dependencies": {
+        "express": "latest",
+        "http-proxy": "latest"
+        
+    }
+}

@@ -1,0 +1,42 @@
+.main-footer {
+	padding: 10px 0;
+	font-size: $font-size-base;
+	a {
+		color: black;
+		text-decoration: none;
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+}
+
+.back-to-top {
+	font-size: 18px;
+	font-weight: bold;
+	padding: 20px 0;
+
+	a {
+		color: $blue;
+	}
+
+	.btn-baktop {
+		padding: 7px 10px;
+		background: #a29b9b;
+		border-radius: 50%;
+		margin: 5px 0 ;
+	}
+	p {
+		padding-top: 10px;
+	}
+}
+
+.top-footer {
+	a {
+		padding: 0 7px;
+	}
+}
+
+.top-footer,
+.bot-footer {
+	padding: 10px 0;
+}

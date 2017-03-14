@@ -1,0 +1,12 @@
+// ----------common
+@import "style/variable.scss";
+@import "style/common.scss";
+@import "style/print.scss";
+@import "style/font-face.scss";
+
+// ------------Block web
+
+@import "style/block/header.scss";
+@import "style/block/footer.scss";
+@import "style/block/slider.scss";
+@import "style/block/product.scss";
