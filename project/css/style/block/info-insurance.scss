@@ -1,0 +1,19 @@
+.info-wrapper {
+	overflow: hidden;
+	padding: 10px 0;
+	margin-bottom: 20px;
+}
+.info-top,
+.info-bo t{
+	margin-bottom: 40px;
+}
+.info-top {
+	padding: 0 15px;
+	max-width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+
+	.info-title {
+		color: blue;
+	}
+}

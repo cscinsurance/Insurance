@@ -22,6 +22,41 @@ var footerController = app.controller('footerController', function ($scope) {
 	}(jQuery, window));
 });
 
+var travelController = app.controller('travelController', function ($scope, $http, $stateParams,$location) {
+
+	$http.get("data/form.json")
+		.then(function(response) {
+		    $scope.travelList = response.data;
+	});
+
+	// $scope.searchText = '';
+
+	// $scope.delete = function(){
+	// 	var button = jQuery('.content-travel').find('button');
+	// 	button.click(function(){
+	// 		console.log($(this));
+	// 	});
+	// }
+});
+
+var travelformController = app.controller('travelformController', function ($scope, $http,$parse, $stateParams,$location) {
+	$scope.categoryUrl = $location.url();
+	$scope.id = $stateParams.id;
+
+	$http.get("data/form.json")
+	    .then(function(response) {
+
+	    	for(let n of response.data){
+	    		if(n.id === $scope.id){
+	    			$scope.text = n;
+	    		}else {
+	    			console.log('404');
+	    		}
+	    	}
+	 });
+
+});
+
 var homeControler = app.controller('homeController', function ($rootScope, $scope, $http) {
 
 

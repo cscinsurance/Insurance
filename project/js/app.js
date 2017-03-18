@@ -12,5 +12,17 @@ app.config(function ($stateProvider) {
         templateUrl: 'block/home.html',
         controller:'homeController'
     });
-});
 
+    $stateProvider.state('travel', {
+        url: '/travel-care',
+        templateUrl: 'block/travel-care.html',
+        controller:'travelController'
+    });
+
+	$stateProvider.state('travelform', {
+        url: '/travel-care/:id',
+        templateUrl: 'block/travel-form.html',
+        controller:'travelformController'
+        
+    });
+});
