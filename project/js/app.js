@@ -25,4 +25,9 @@ app.config(function ($stateProvider) {
         controller:'travelformController'
         
     });
+
+     $stateProvider.state('product', {
+        url: '/car-care',
+        templateUrl: 'block/car-care.html'
+    });
 });

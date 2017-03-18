@@ -376,5 +376,23 @@ header {
     margin: 20px 0 20px; }
     .search-travel:focus {
       width: 80%; } }
+.product-auto-banner {
+  height: 225px;
+  background: url("/images/autocare/product_banner.jpg") no-repeat center center;
+  background-size: 100% 100%;
+  border: 1px solid #CBCBCB; }
+
+.product-auto-description {
+  font-family: 'Helvetica';
+  font-size: 1.2em; }
+
+.h3 {
+  position: 0 auto; }
+
+.table {
+  font-size: 1.2em; }
+
+.table thead {
+  font-weight: bold; }
 
 /*# sourceMappingURL=style.css.map */
