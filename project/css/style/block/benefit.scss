@@ -1,0 +1,57 @@
+.benefit {
+	display: flex;
+	background: #2a2b29;
+	box-shadow: 10px 10px 5px #888888;
+	&__wrapper {
+		padding: 70px 0 ;
+	}
+
+	&__bg {
+		background-size: cover;
+		background-position: center;
+		width: 50%;
+		min-height: 400px;
+	}
+
+	&__content {
+		width: 50%;
+		padding: 20px 40px;
+		color: white;
+	}
+	&__title {
+		color: lightblue;
+	}
+
+	&__text {
+		padding: 30px 0;
+		font-size: 20px;
+	}
+}
+
+@media (max-width: $screen-xs-max) {
+
+	.benefit {
+		flex-direction: column;
+		background: #2a2b29;
+		box-shadow: 5px 5px 2px #888888;
+		&__wrapper {
+			padding: 40px 0;
+		}
+
+		&__bg {
+			background-size: cover;
+			background-position: center;
+			width: 100%;
+			min-height: 300px;
+		}
+
+		&__content {
+			width: 100%;
+			padding-bottom: 40px;
+		}
+		&__text {
+			font-size: 18px;
+		}
+	}	
+
+}

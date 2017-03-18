@@ -1,3 +1,7 @@
+.content-page {
+  margin-top: 67px;
+}
+
 a {
   transition: all .3s;
 }
@@ -31,5 +35,37 @@ a {
 .icon-face{
   &:before {
     content: '\f230';
+  }
+}
+
+.icon-car{
+  &:before {
+    content: '\f1b9';
+  }
+}
+
+.icon-travel{
+  &:before {
+    content: '\f072';
+  }
+}
+.icon-health{
+  &:before {
+    content: '\f21e';
+  }
+}
+.icon-plus{
+  &:before {
+    content: "\f055";
+  }
+}
+.icon-delete{
+  &:before {
+    content: "\f00d";
+  }
+}
+@media (min-width: $screen-tablet) {
+  .content-page {
+    margin-top: 80px;
   }
 }

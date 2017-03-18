@@ -5,7 +5,7 @@
 		color: black;
 		text-decoration: none;
 		&:hover {
-			opacity: 0.7;
+			color: blue;
 		}
 	}
 }
@@ -26,6 +26,8 @@
 		margin: 5px 0 ;
 	}
 	p {
+		color: blue;
+		font-weight: bold;
 		padding-top: 10px;
 	}
 }

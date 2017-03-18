@@ -1,0 +1,36 @@
+.info__contact {
+	margin-bottom: 20px 0 10px;
+	background-size: cover;
+	padding: 40px 0 ;
+	border-top: 3px solid #929292;
+
+	.folow {
+		margin-top: 10px;
+	}
+
+	.view-more {
+		font-size: 18px;
+	}
+
+	span {
+		font-size: 20px;
+		padding: 10px;
+		color: #7b5fa5;
+	}
+
+	.social {
+		font-size: 30px;
+	}
+}
+@media (max-width: $screen-xs-max){
+	.info__contact {
+		span {
+			display: block;
+			margin: 10px 0;
+		}
+
+		.icon-face {
+			font-size: 50px;
+		}
+	}
+}

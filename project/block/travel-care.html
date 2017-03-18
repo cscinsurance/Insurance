@@ -1,0 +1,24 @@
+<div class="travel-wrapper" style="background-image: url('./images/bgClouds.svg')">
+	<div class="banner-travel" style="background-image: url('images/bg-header.jpg')">
+		<h1 class="title"> Travel Insurance</h1>
+	</div>
+	<div class="container text-center">
+		<h2 class="title-travel"> Insurance policy list</h2>
+		<div class="content-travel row ">
+			<input type="text" ng-model='searchText' class="search-travel" placeholder="Search"> <span class="icon icon-plus plus"></span><br>
+			<div class='col-md-4' ng-repeat="travelitem in travelList | filter:searchText">
+				<div class="block-travel" style="background-image: url('images/small-bg.png')">
+					<div class='content' href='#'>
+						<p class='name'> <span> Name: </span> {{travelitem.name}} </p>
+						<p class='id-card'> <span> Id Card: </span> {{travelitem.id}} </p>
+						<p class='type-care'> <span>Type: </span> {{travelitem.type}}</p>
+						<p class='sig'>{{travelitem.sig}}</p>
+						<a class='edit' href="#" title="edit">Edit</a>
+					</div>
+					<button type='button' class="icon icon-delete delete" ng-click="delete()" ></button>
+				</div>
+			</div>
+		</div>
+		
+	</div>	
+</div>

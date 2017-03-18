@@ -35,10 +35,11 @@
     <body ng-app="app">
         <!--header-->
         <ng-include src="'block/header.html'"></ng-include>
-
-        <ui-view></ui-view>
-
+        <div class="content-page">
+            <ui-view></ui-view>
+        </div>
         <!--footer-->
+        <ng-include src="'block/contact.html'"></ng-include>
         <ng-include src="'block/footer.html'"></ng-include>
     </body>
 
