@@ -3,6 +3,8 @@
 
 a {
   transition: all .3s; }
+  a:hover {
+    text-decoration: none; }
 
 .view-more {
   font-size: 20px;
@@ -85,8 +87,6 @@ header {
 
 .menu__item a {
   font-size: 20px; }
-  .menu__item a:hover .sub-menu {
-    display: block; }
 
 .menu {
   padding-left: 30px; }
@@ -115,6 +115,9 @@ header {
   .menu__item a {
     font-size: 16px; } }
 @media (min-width: 992px) {
+  .dropdown:hover .dropdown-menu {
+    display: block; }
+
   .navbar {
     border-radius: 0; }
 
@@ -185,12 +188,16 @@ header {
   padding: 27px;
   margin: 20px 0;
   background: #f1f1f1;
-  box-shadow: 10px 10px 5px #888888; }
+  box-shadow: 10px 10px 5px #888888;
+  transition: all .3s; }
   .product__item .title {
     color: #232e64; }
   .product__item p {
     font-size: 100px;
     color: blue; }
+  .product__item:hover {
+    transform: translateY(5px);
+    box-shadow: 3px 3px 5px #888888; }
 
 .info-wrapper {
   overflow: hidden;
@@ -248,7 +255,6 @@ header {
     .benefit__text {
       font-size: 18px; } }
 .info__contact {
-  margin-bottom: 20px 0 10px;
   background-size: cover;
   padding: 40px 0;
   border-top: 3px solid #929292; }
@@ -264,11 +270,13 @@ header {
     font-size: 30px; }
 
 @media (max-width: 767px) {
-  .info__contact span {
-    display: block;
-    margin: 10px 0; }
-  .info__contact .icon-face {
-    font-size: 50px; } }
+  .info__contact {
+    padding: 20px 0; }
+    .info__contact span {
+      display: block;
+      margin: 10px 0; }
+    .info__contact .icon-face {
+      font-size: 50px; } }
 .travel-wrapper {
   background-color: #D1F2ED;
   background-repeat: no-repeat;
@@ -276,12 +284,14 @@ header {
   overflow: hidden; }
   .travel-wrapper .title-travel {
     font-size: 50px;
-    font-family: fantasy; }
+    font-family: fantasy;
+    color: #232e64; }
 
 .banner-travel {
   background-size: cover;
   background-position-x: 90%; }
   .banner-travel .title {
+    margin: 0;
     background-position: bottom right;
     font-size: 40px;
     padding: 70px 11% 180px;
@@ -304,8 +314,7 @@ header {
   font-size: 25px;
   color: blue;
   position: relative;
-  top: 4px;
-  transition: all .3s; }
+  top: 4px; }
   .content-travel .plus:hover {
     top: 6px;
     cursor: pointer;
@@ -323,7 +332,11 @@ header {
   background: #d7d9dc;
   position: relative;
   color: #efec9f;
-  box-shadow: 10px 10px 5px #888888; }
+  box-shadow: 10px 10px 5px #888888;
+  transition: all .5s; }
+  .block-travel:hover {
+    transform: translateY(5px);
+    box-shadow: 3px 3px 5px #888888; }
   .block-travel .delete {
     border: none;
     background: transparent;
@@ -394,5 +407,29 @@ header {
 
 .table thead {
   font-weight: bold; }
+
+.panel-travel {
+  padding: 40px 0 60px; }
+  .panel-travel label {
+    color: blue;
+    font-family: monospace; }
+
+.panel-body .row {
+  padding: 10px 0 15px; }
+  .panel-body .row p {
+    color: #E91E63;
+    font-size: 18px;
+    font-weight: bold; }
+
+.money {
+  margin-bottom: 40px; }
+
+.info-title {
+  font-family: cursive;
+  color: red; }
+
+@media (max-width: 767px) {
+  .panel-travel {
+    padding: 20px 10px 30px; } }
 
 /*# sourceMappingURL=style.css.map */

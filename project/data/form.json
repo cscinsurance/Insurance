@@ -1,57 +1,72 @@
 [
     {
-        "id": "1",
+        "id": "",
+        "name": "",
+        "type": "",
+        "phone" : "",
+        "days" : "",
+        "state": false
+    },
+    {
+        "id": "241111",
         "name": " Nguyễn Huy Tuấn",
         "type": "Cá nhân",
-        "sig" : "Đã ký",
+        "phone" : "0977263117",
+        "days" : "5",
         "state": true
     },
     {
-        "id": "2",
+        "id": "2412133",
         "name": " Đào Đức Đồng",
         "type": "Nhóm",
         "sig" : "Chưa ký",
+        "phone" : "093041344",
+        "days" : "5",
         "state": false
     }, 
     {
-        "id": "3",
+        "id": "3421413",
         "name": "Nguyễn Huy Vũ",
         "type": "Gia Đình",
-        "sig" : "Chưa ký",
+        "phone" : "09431317",
+        "days" : "2",
         "state": false
 
     },
     {
-        "id": "4",
+        "id": "54514",
         "name": "Đào Hoàng Đức",
         "type": "Cá Nhân",
-        "sig" : "Đã ký",
+        "phone" : "0912414211",
+        "days" : "5",
         "state": true
 
     },
     {
-        "id": "5",
+        "id": "91234415",
         "name": "Đăng văn Bi",
         "type": "Cá Nhân",
-        "sig" : "Đã ký",
+        "phone" : "0312333117",
+        "days" : "5",
         "state": true
 
     },
     {
-        "id": "6",
+        "id": "412477",
         "name": "Trần văn Linh",
         "type": "Gia Đình",
-        "sig" : "Đã ký",
+        "phone" : "097712311",
+        "days" : "8",
         "state": true
 
     },
     {
-        "id": "7",
+        "id": "1235447",
         "name": "Bùi văn Bách",
         "type": "Nhóm",
-        "sig" : "Chưa ký",
+        "phone" : "0993263117",
+        "days" : "10",
         "state": false
-
     }
 ]
 

@@ -1,13 +1,22 @@
-var silderController = app.controller('silderController', function ( $scope) {
+var silderController = app.controller('silderController', function ( $scope,$http) {
 
- 	jQuery('.slider').slick({
-	  dots: true,
-	  speed: 500,
-	  fade: true,
-	  cssEase: 'linear',
-	  autoplay: true,
-  	  autoplaySpeed: 1000,
+	$http.get("data/insurance.json")
+		.then(function(response) {
+			$scope.slider = response.data.slider;
+
 	});
+
+	$scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
+		 	jQuery('.slider').slick({
+			  dots: true,
+			  speed: 500,
+			  fade: true,
+			  cssEase: 'linear',
+			  autoplay: true,
+		  	  autoplaySpeed: 1000,
+			});
+	});
+
 });
 
 var footerController = app.controller('footerController', function ($scope) {
@@ -22,43 +31,53 @@ var footerController = app.controller('footerController', function ($scope) {
 	}(jQuery, window));
 });
 
-var travelController = app.controller('travelController', function ($scope, $http, $stateParams,$location) {
-
+var travelController = app.controller('travelController', function ($scope, $http,$location,$filter) {
+	$scope.url = $location.url();
 	$http.get("data/form.json")
 		.then(function(response) {
-		    $scope.travelList = response.data;
+	 	var ojNull = $filter('filter')(response.data, {id:''})[0];
+	 	$scope.travelList = jQuery.grep(response.data, function(value) {
+		  return value != ojNull;
+		});
+
+	 	$scope.remove = function(i) {
+	        $scope.travelList.splice(i,1);
+	    }
 	});
 
-	// $scope.searchText = '';
 
-	// $scope.delete = function(){
-	// 	var button = jQuery('.content-travel').find('button');
-	// 	button.click(function(){
-	// 		console.log($(this));
-	// 	});
-	// }
+
+	// $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
+	// 	jQuery('.block-travel').find("button[ng-disabled='true']").attr('disabled', true);
+		 
+	// });
 });
 
-var travelformController = app.controller('travelformController', function ($scope, $http,$parse, $stateParams,$location) {
-	$scope.categoryUrl = $location.url();
+var travelformController = app.controller('travelformController', function ($scope, $http,$stateParams,$filter) {
 	$scope.id = $stateParams.id;
-
 	$http.get("data/form.json")
 	    .then(function(response) {
+	 	$scope.form = $filter('filter')(response.data, {id:$scope.id})[0];
 
-	    	for(let n of response.data){
-	    		if(n.id === $scope.id){
-	    			$scope.text = n;
-	    		}else {
-	    			console.log('404');
-	    		}
-	    	}
-	 });
+	 	if($scope.form.state){
+
+	  		jQuery('.info-customer').find('input[type="text"]').attr('disabled', true);
+	  		var confirm = jQuery('.confirm');
+	  		confirm.prop('checked', true);
+	  		confirm.attr('disabled', true);
+	 	}
+
+	});
 
 });
 
-var homeControler = app.controller('homeController', function ($rootScope, $scope, $http) {
+var homeControler = app.controller('homeController', function ( $scope, $http) {
 
+	$http.get("data/insurance.json")
+		.then(function(response) {
+			$scope.insurance = response.data.cardInsurance;
+			$scope.infor = response.data.carInforInsurance;
+	});
 
 });
 

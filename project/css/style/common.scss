@@ -4,6 +4,9 @@
 
 a {
   transition: all .3s;
+    &:hover {
+      text-decoration: none;
+    }
 }
 
 .view-more {

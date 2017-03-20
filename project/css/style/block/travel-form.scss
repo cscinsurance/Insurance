@@ -1,0 +1,38 @@
+.panel-travel {
+	padding: 40px 0 60px;
+
+		label {
+			color: blue;
+			font-family: monospace;
+		}
+}
+
+.panel-body {
+	.row {
+		padding: 10px 0 15px;
+
+		p {
+			color: #E91E63;
+		    font-size: 18px;
+		    font-weight: bold;
+		}
+
+	}
+}
+.money {
+	margin-bottom: 40px;
+}
+
+.info-title {
+	font-family:cursive;
+	color: red;
+
+}
+
+@media (max-width: $screen-xs-max){
+
+	.panel-travel {
+		padding: 20px 10px 30px;
+	}
+
+}

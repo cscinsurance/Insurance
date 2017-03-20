@@ -1,0 +1,58 @@
+{
+    "cardInsurance" : [
+        {
+            "title": "Health Insurance",
+            "class": "icon-health",
+            "link": "#/health-care"
+        },
+        {
+            "title": "Travel Insurance",
+            "class": "icon-travel",
+            "link": "#/travel-care"
+        },
+        {
+            "title": "Car Insurance",
+            "class": "icon-car",
+            "link": "#/car-care"
+        }
+    ],
+
+    "carInforInsurance": [
+        {
+            "title": "Health Insurance",
+            "imgUrl": "images/img-health.png",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        },
+        {
+            "title": "Travel Insurance",
+            "imgUrl": "images/img-travel.png",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        },
+        {
+            "title": "Car Insurance",
+            "imgUrl": "images/img-car.png",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        }
+    ],
+    "slider": [
+        {
+            "title": "Protect yout family with affordable Health Insurance",
+            "imgUrl": "images/suckhoe.jpg",
+            "link": "#/health-care"
+        },
+        {
+            "title": "Protect yout family with affordable Travel Insurance",
+            "imgUrl": "images/dulich.jpg",
+            "link": "#/travel-care"
+
+        },
+        {
+            "title": "Protect yout family with affordable Car Insurance",
+            "imgUrl": "images/oto.jpg",
+            "link": "#/car-care"
+            
+        }
+    ]
+}
+
+
