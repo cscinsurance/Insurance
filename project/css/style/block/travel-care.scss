@@ -7,6 +7,7 @@
 	.title-travel {
 		font-size: 50px;
 		font-family: fantasy;
+		color: $blue;
 	}
 
 }
@@ -14,6 +15,7 @@
 		background-size: cover;
 		background-position-x: 90%;
 	.title {
+		margin: 0;
 		background-position: bottom right;
 		font-size: 40px;
 		padding: 70px 11% 180px;
@@ -43,8 +45,7 @@
 		color: blue;
 		position: relative;
 		top: 4px;
-		transition: all .3s;
-
+		
 		&:hover {
 			top: 6px;
 			cursor: pointer;
@@ -66,6 +67,12 @@
 	position: relative;
 	color: #efec9f;
 	box-shadow: 10px 10px 5px #888888;
+	transition: all .5s;
+
+	&:hover {
+		transform: translateY(5px);
+		box-shadow: 3px 3px 5px #888888;
+	}
 
 	.delete {
 		border: none;

@@ -45,16 +45,14 @@ header {
 	padding-top: 30px;
 	padding-bottom: 30px;
 }
+
 .menu__item {
 	a {
 		font-size: 20px;
-		&:hover {
-			.sub-menu{
-				display: block;
-			}
-		}
 	}
 }
+
+
 
 .menu {
 	padding-left: 30px;
@@ -94,6 +92,13 @@ header {
 }
 
 @media (min-width: $screen-desktop) {
+	.dropdown{
+		&:hover {
+			.dropdown-menu {
+					display: block;
+				}
+		}
+	}
 	.navbar {
 		border-radius: 0;
 	}

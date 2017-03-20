@@ -1,5 +1,4 @@
 .info__contact {
-	margin-bottom: 20px 0 10px;
 	background-size: cover;
 	padding: 40px 0 ;
 	border-top: 3px solid #929292;
@@ -24,6 +23,7 @@
 }
 @media (max-width: $screen-xs-max){
 	.info__contact {
+		padding: 20px 0 ;
 		span {
 			display: block;
 			margin: 10px 0;

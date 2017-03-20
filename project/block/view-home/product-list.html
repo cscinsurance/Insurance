@@ -1,25 +1,6 @@
 <div class="container product">
 	<div class="row text-center">
-		<div class='col-md-4 '>
-		<div class ='product__item'>
-				<h3 class="title"> Health Insurance</h3>
-				<p class="icon icon-health"></p>
-				<a href="#" class="view-more"> view more</a>
-			</div> 
-		</div>
-		<div class='col-md-4'>
-			<div class ='product__item'>
-				<h3 class="title"> Travel Insurance</h3>
-				<p class="icon icon-travel"></p>
-				<a href="#" class="view-more"> view more</a>
-			</div>
-		</div>
-		<div class='col-md-4'>
-			<div class ='product__item'>
-				<h3 class="title"> Car Insurance</h3>
-				<p class="icon icon-car"></p>
-				<a href="#" class="view-more"> view more</a>
-			</div>
-		</div>
+		<card-insurance ng-repeat="item in insurance" item="item">
+    	</card-insurance>
 	</div>
 </div>
