@@ -1,0 +1,20 @@
+.healthcss {
+  margin-top: 100px;
+}
+
+#healthcss1 {
+      background-size: cover;
+    background-repeat: no-repeat;
+   
+}
+
+.grid {
+    width: 800px;
+    height: 250px;
+}
+
+@media (min-width: 768px) {
+  .healthcss {
+    margin-top: 100px;
+  }
+}
