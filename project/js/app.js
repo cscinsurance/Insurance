@@ -30,4 +30,10 @@ app.config(function ($stateProvider) {
         url: '/car-care',
         templateUrl: 'block/car-care.html'
     });
+
+     $stateProvider.state('healthcare', {
+        url: '/health-care',
+        templateUrl: 'block/health-care.html',
+        controller:'healthctrl'
+    });
 });

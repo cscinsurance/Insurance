@@ -1,0 +1,56 @@
+<section class="healthcss" >	
+	<!--<div class="slider">
+		<div class="slider__item" style="background-image: url('./images/suckhoe.jpg')">
+			<div class="container">
+				<div class="content">	
+					<h2 class="title"> Protect yout family with affordable health insurance
+					</h2>
+					<a href="#" title="View more" class="view-more"> View more</a>
+				</div>				
+			</div>
+		</div>
+		<div class="slider__item" style="background-image: url('./images/dulich.jpg')">
+			<div class="container">				
+				<div class="content">	
+					<h2 class="title"> Protect yout family with affordable health insurance
+					</h2>
+					<a href="#" title="View more" class="view-more"> View more</a>
+				</div>	
+			</div>
+
+		</div>
+		<div class="slider__item" style="background-image: url('./images/oto.jpg')">
+			<div class="container">			
+				<div class="content">	
+					<h2 class="title"> Protect yout family with affordable health insurance
+					</h2>
+					<a href="# title="View more" class="view-more"> View more</a>
+				</div>	
+			</div>
+		</div>
+	</div>-->
+    <div ng-controller="healthctrl">
+        <h1> ABCC</h1>
+        <img src="./images/index-2.jpg" alt="Smiley face" width="1348px" >
+        <div>
+        <button onclick="location.href='/#/health-create'">ADD</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ten</th>
+                        <th>So CMND</th>
+                        <th>Tinh Trang</th>
+                    </tr>
+                </thead>
+                <tbody >
+                    <tr>
+                        <td>{{cus.name}}</td>
+                        <td>{{cus.cmnd}}</td>
+                        <td>{{cus.status}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!--<div ui-gird="gripOptions" ui-grid-pagination class="grid"></div>-->
+        </div>
+    </div>
+</section>
