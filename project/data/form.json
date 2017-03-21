@@ -5,7 +5,8 @@
         "type": "",
         "phone" : "",
         "days" : "",
-        "state": false
+        "state": false,
+        "money" : ""
     },
     {
         "id": "241111",
@@ -13,7 +14,29 @@
         "type": "Cá nhân",
         "phone" : "0977263117",
         "days" : "5",
-        "state": true
+        "state": true,
+
+        "asean": false,
+        "asia" : true,
+        "global": false,
+
+        "individual" : true,
+        "group" : false,
+        "family":false,
+
+        "classic" : false,
+        "premier": true,
+
+        "stability" : true,
+        "instability" : false,
+
+        "relax": true,
+        "discover": false,
+        "conquest": false,
+
+        "road" : true,
+        "warterway" : false,
+        "airline":false
     },
     {
         "id": "2412133",
@@ -22,7 +45,29 @@
         "sig" : "Chưa ký",
         "phone" : "093041344",
         "days" : "5",
-        "state": false
+        "state": false,
+
+        "asean": false,
+        "asia" : true,
+        "global": false,
+
+        "individual" : false,
+        "group" : false,
+        "family":true,
+
+        "classic" : false,
+        "premier": true,
+
+        "stability" : true,
+        "instability" : false,
+
+        "relax": true,
+        "discover": false,
+        "conquest": false,
+
+        "road" : true,
+        "warterway" : false,
+        "airline":false
     }, 
     {
         "id": "3421413",
@@ -30,7 +75,29 @@
         "type": "Gia Đình",
         "phone" : "09431317",
         "days" : "2",
-        "state": false
+        "state": true,
+
+        "asean": false,
+        "asia" : false,
+        "global": false,
+
+        "individual" : true,
+        "group" : false,
+        "family":false,
+
+        "classic" : false,
+        "premier": true,
+
+        "stability" : false,
+        "instability" : true,
+
+        "relax": false,
+        "discover": false,
+        "conquest": false,
+
+        "road" : false,
+        "warterway" : false,
+        "airline":true
 
     },
     {
@@ -39,7 +106,28 @@
         "type": "Cá Nhân",
         "phone" : "0912414211",
         "days" : "5",
-        "state": true
+        "state": true,
+        "asean": false,
+        "asia" : true,
+        "global": false,
+
+        "individual" : true,
+        "group" : false,
+        "family":false,
+
+        "classic" : true,
+        "premier": false,
+
+        "stability" : true,
+        "instability" : false,
+
+        "relax": true,
+        "discover": false,
+        "conquest": false,
+
+        "road" : true,
+        "warterway" : false,
+        "airline":false
 
     },
     {
@@ -48,7 +136,28 @@
         "type": "Cá Nhân",
         "phone" : "0312333117",
         "days" : "5",
-        "state": true
+        "state": true,
+        "asean": false,
+        "asia" : true,
+        "global": false,
+
+        "individual" : true,
+        "group" : false,
+        "family":false,
+
+        "classic" : false,
+        "premier": true,
+
+        "stability" : true,
+        "instability" : false,
+
+        "relax": true,
+        "discover": false,
+        "conquest": false,
+
+        "road" : true,
+        "warterway" : false,
+        "airline":false
 
     },
     {
@@ -57,7 +166,28 @@
         "type": "Gia Đình",
         "phone" : "097712311",
         "days" : "8",
-        "state": true
+        "state": true,
+        "asean": false,
+        "asia" : true,
+        "global": false,
+
+        "individual" : true,
+        "group" : false,
+        "family":false,
+
+        "classic" : false,
+        "premier": true,
+
+        "stability" : true,
+        "instability" : false,
+
+        "relax": true,
+        "discover": false,
+        "conquest": false,
+
+        "road" : true,
+        "warterway" : false,
+        "airline":false
 
     },
     {
@@ -66,7 +196,28 @@
         "type": "Nhóm",
         "phone" : "0993263117",
         "days" : "10",
-        "state": false
+        "state": false,
+        "asean": false,
+        "asia" : true,
+        "global": false,
+
+        "individual" : true,
+        "group" : false,
+        "family":false,
+
+        "classic" : false,
+        "premier": true,
+
+        "stability" : true,
+        "instability" : false,
+
+        "relax": true,
+        "discover": false,
+        "conquest": false,
+
+        "road" : true,
+        "warterway" : false,
+        "airline":false
     }
 ]
 
