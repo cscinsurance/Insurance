@@ -43,18 +43,18 @@
 					</div>
 					<div class="panel-body">
 						<div class="form-horizontal">
-							<div class="form-group ">
+							<div class="form-group "> 
 								<div class="row">
 									<p class='col-xs-offset-1 '>Tourist area</p>
 									<div class="area col-xs-offset-2 text-center">
 										<label class="col-xs-3">
-									      <input type="radio" name="area" class="asean"> Asean
+									      <input type="checkbox" name="area" class="asean" ng-model='form.asean'> Asean
 									    </label>
 									    <label class="col-xs-3">
-									      <input type="radio" name="area" class="asia"> Asia
+									      <input type="checkbox" name="area" class="asia" ng-model='form.asia'> Asia
 									    </label>
 									    <label class="col-xs-3">
-									      <input type="radio" name="area" class="global"> Global
+									      <input type="checkbox" name="area" class="global" ng-model='form.global'> Global
 									    </label>
 									</div>
 								</div>
@@ -62,13 +62,13 @@
 									<p class='col-xs-offset-1'>Type Insurance</p>
 									<div class="type-care col-xs-offset-2 text-center">
 										<label class=" col-xs-3">
-									      <input type="radio" name="type-care" class="individual"> individual
+									      <input type="checkbox" name="type-care" class="individual" ng-model='form.individual'> individual
 									    </label>
 									    <label class="col-xs-3">
-									      <input type="radio" name="type-care" class="group"> Group
+									      <input type="checkbox" name="type-care" class="family" ng-model='form.family'> Family
 									    </label>
 									    <label class="col-xs-3">
-									      <input type="radio" name="type-care" class="family"> Family
+									      <input type="checkbox" name="type-care" class="group" ng-model='form.group'> Group
 									    </label>
 									</div>	
 								</div>
@@ -76,10 +76,10 @@
 									<p class='col-xs-offset-1'>Insurance package</p>
 									<div class="package col-xs-offset-2 text-center">
 										<label class="col-xs-5">
-									      <input type="radio" name="package" class="classic"> Classic
+									      <input type="checkbox" name="package" class="classic" ng-model='form.classic'> Classic
 									    </label>
 									    <label class="col-xs-5">
-									      <input type="radio" name="package" class="cremier"> Premier
+									      <input type="checkbox" name="package" class="premier" ng-model='form.premier'> Premier
 									    </label>
 									</div>	
 								</div>
@@ -99,10 +99,10 @@
 									<p class='col-xs-offset-1 '>Travel area</p>
 									<div class="area-travel col-xs-offset-2 text-center">
 										<label class="col-xs-5">
-									      <input type="radio" name="area-travel" class="stability"> political stability
+									      <input type="checkbox" name="area-travel" class="stability" ng-model='form.stability'> Political stability
 									    </label>
 									    <label class="col-xs-5">
-									      <input type="radio" name="area-travel" class="instability"> Political instability
+									      <input type="checkbox" name="area-travel" class="instability" ng-model='form.instability'> Political instability
 									    </label>
 									</div>
 								</div>
@@ -110,13 +110,13 @@
 									<p class='col-xs-offset-1'>Types of Tourism</p>
 									<div class=" tourism col-xs-offset-2 text-center">
 									    <label class="col-xs-3">
-									      <input type="radio" name="tourism" class="relax"> Relax
+									      <input type="checkbox" name="tourism" class="relax" ng-model='form.relax'> Relax
 									    </label>
 										<label class=" col-xs-3">
-									      <input type="radio" name="tourism" class="discover"> Discover
+									      <input type="checkbox" name="tourism" class="discover" ng-model='form.discover'> Discover
 									    </label>
 									    <label class="col-xs-3">
-									      <input type="radio" name="tourism" class="conquest"> Conquest
+									      <input type="checkbox" name="tourism" class="conquest" ng-model='form.conquest'> Conquest
 									    </label>
 									</div>	
 								</div>
@@ -124,13 +124,13 @@
 									<p class='col-xs-offset-1'>Phương tiện Giao thông</p>
 									<div class="vehicle col-xs-offset-2 text-center">
 										<label class="col-xs-3">
-									      <input type="radio" name="vehicle" class="road"> Road 
+									      <input type="checkbox" name="vehicle" class="road" ng-model='form.road'> Road 
 									    </label>
 									    <label class="col-xs-3">
-									      <input type="radio" name="vehicle" class="warter-way"> Warter Way
+									      <input type="checkbox" name="vehicle" class="warter-way" ng-model='form.warterway'> Warter Way
 									    </label>
 									    <label class="col-xs-3">
-									      <input type="radio" name="vehicle" class="airline"> AirLine
+									      <input type="checkbox" name="vehicle" class="airline" ng-model='form.airline'> AirLine
 									    </label>
 									</div>	
 								</div>
@@ -142,7 +142,7 @@
 				<div class="money row">
 					<label class="col-xs-2 col-sm-1 control-label" >Money: </label>
 						<div class="col-xs-3">
-							<input class="out-money"  type = "text" value='100' disabled/>
+							<input class="out-money"  type = "text" value='{{computedTotal()}}' disabled/>
 						</div>
 				</div>
 
