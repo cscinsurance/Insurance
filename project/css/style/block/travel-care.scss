@@ -10,10 +10,16 @@
 		color: $blue;
 	}
 
+	.mes-error {
+		color: red;
+		font-family: cursive;
+	}
+
 }
 .banner-travel {
 		background-size: cover;
 		background-position-x: 90%;
+
 	.title {
 		margin: 0;
 		background-position: bottom right;
@@ -68,6 +74,8 @@
 	color: #efec9f;
 	box-shadow: 10px 10px 5px #888888;
 	transition: all .5s;
+	border-radius: 5px;
+
 
 	&:hover {
 		transform: translateY(5px);
@@ -92,11 +100,17 @@
     	&:focus {
 			outline: none;
 		}
+
+	  &:disabled {
+	    background: black;
+	    cursor: not-allowed;
+	  }
+
 	}
 
 	.name,
 	.id-card,
-	.type-care {
+	.phone {
 		span {
 			font-weight: bold;
 			color: black;
@@ -124,6 +138,81 @@
 	}
 }
 
+@-webkit-keyframes animatetop {
+    from {top:0%; opacity:0} 
+    to {top:50%; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top: 0; opacity:0}
+    to {top:50%; opacity:1}
+}
+
+.popup {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	background: #2f3d86;
+	padding: 20px;
+	border-radius: 10px;
+	font-size: 18px;
+	color: blanchedalmond;
+	animation-name: animatetop;
+    animation-duration: 0.4s;
+
+    &__header {
+    	position: absolute;
+    	top: 0;
+    	left: 50%;
+    	transform: translate(-50%,-50%);
+    }
+
+	button {
+		display: block;
+		margin: 10px;
+		color: #2f3d86;
+		font-weight: bold;
+    	font-family: cursive;
+	}
+
+	.btn-wrapper {
+		max-width: 70%;
+		margin-left: 40%;
+	}
+
+	&__warpper {
+		display: none;
+		z-index: 3;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: rgba(44, 45, 45, 0.87);
+	}
+
+	&__content {
+		text-align: left;
+	}
+
+	&__title {
+		text-align: center;
+		font-family: cursive;
+		padding: 10px 0;
+		color: yellow;
+	}
+
+	&__name,
+	&__id,
+	&__phone {
+		margin-left: 13px;
+    	font-size: 15px;
+    	font-family: monospace;
+
+	}
+}
+
 @media (max-width: $screen-xs-max ){
 
 	.travel-wrapper {
@@ -147,6 +236,28 @@
 		margin: 20px 0 20px;
 		&:focus{
 			width: 80%;
+		}
+	}
+
+	.popup {
+		padding: 10px;
+		font-size: 14px;
+
+		button {
+			padding: 5px;
+			margin: 3px;
+			font-size: 12px;
+		}
+
+		&__title {
+			padding: 5px 0;
+		}
+
+		&__name,
+		&__id,
+		&__phone {
+	    	font-size: 12px;
+
 		}
 	}
 

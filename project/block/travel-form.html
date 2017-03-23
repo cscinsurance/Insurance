@@ -1,8 +1,8 @@
 <div class="travel-wrapper" style="background-image: url('./images/bgClouds.svg')">
 	<div class="container">
 		<h2 class="title-travel text-center"> Insurance Contract </h2>
-		<div class="row">
-			<div class="col-sm-8 col-sm-offset-2 panel-travel">
+		<form class="row" name='myForm'>
+			<div class="col-sm-9 col-sm-offset-2 panel-travel">
 				<div class="info-customer">
 					<div class="info-heading">
 						<h3 class="info-title">Customer Information</h3>
@@ -12,26 +12,35 @@
 							<div class="form-group ">
 								<label class="col-sm-4 control-label" for="fullname">Full Name</label>
 								<div class="col-sm-5">
-									<input type="text" class="form-control" id="lastname" name="fullname" placeholder="Full Name" value="{{form.name}}"/>
+									<input type="text" class="form-control" id="lastname" name="fullname" placeholder="Full Name" value="{{form.name}}" ng-model="form.name" required pattern="[a-zA-Z\s]+" />
 								</div>
+								<span ng-show="myForm.fullname.$error.required" class="col-sm-3 mes-error ">* Name is required.</span>
+								<span ng-show="myForm.fullname.$error.pattern" class="col-sm-3 mes-error">* Invalid Name.</span>
 							</div>
 							<div class="form-group">
 								<label class="col-sm-4 control-label" for="id-car">Id Card</label>
 								<div class="col-sm-5">
-									<input type="text" class="form-control" id="id-car" name="id-care" placeholder="Id card" value="{{form.id }}" "/>
+									<input type="text" class="form-control" id="id-card" name="idCard" placeholder="Id card" value="{{form.id }}" ng-model="form.id" required pattern="[0-9]+"  ng-keyup='change()'/> 
 								</div>
+								<span ng-show="myForm.idCard.$error.required" class="col-sm-3 mes-error">* ID card is required.</span>
+								<span ng-show="myForm.idCard.$error.pattern" class="col-sm-3 mes-error">* ID card must is number.</span>
+								<span ng-show="checkDoup" class="col-sm-3 mes-error">* ID card Exits !</span>
 							</div>
 							<div class="form-group ">
 								<label class="col-sm-4 control-label" for="phone">Phone</label>
 								<div class="col-sm-5">
-									<input type="text" class="form-control" id="phone" name="phone" placeholder="Phone number" value="{{form.phone }}"/>
+									<input type="text" class="form-control" id="phone" name="phone" placeholder="Phone number" value="{{form.phone }}" ng-model="form.phone" required pattern="[0-9]+"/>
 								</div>
+								<span ng-show="myForm.phone.$error.required" class="col-sm-3 mes-error">* Phone is required</span>
+								<span ng-show="myForm.phone.$error.pattern" class="col-sm-3 mes-error ">* Phone must is number</span>
 							</div>
 							<div class="form-group ">
 								<label class="col-sm-4 control-label" for="number-day">Number Travel Days</label>
 								<div class="col-sm-5">
-									<input type="text" class="form-control" id="number-day" name="number-day" value="{{form.days}}" />
+									<input type="text" class="form-control" id="number-day" name="numberDay" value="{{form.days}}" ng-model="form.days" required pattern=" [0-9]+"/>
 								</div>
+								<span ng-show="myForm.numberDay.$error.required" class="col-sm-3 mes-error">* Is required.</span>
+								<span ng-show="myForm.numberDay.$error.pattern" class="col-sm-3 mes-error">* Must is Number.</span>
 							</div>
 						</div>
 					</div>
@@ -48,10 +57,13 @@
 									<p class='col-xs-offset-1 '>Tourist area</p>
 									<div class="area col-xs-offset-2 text-center">
 										<label class="col-xs-3">
-									      <input type="checkbox" name="area" class="asean" ng-model='form.asean'> Asean
+									      <input type="checkbox" name="area" class="asean" ng-model='form.asean' ng-checked="{{form.asean}}"> Asean 
 									    </label>
+
+								
+
 									    <label class="col-xs-3">
-									      <input type="checkbox" name="area" class="asia" ng-model='form.asia'> Asia
+									      <input type="checkbox" name="area" class="asia" ng-model='form.asia' ng-checked="{{form.asia}}"> Asia
 									    </label>
 									    <label class="col-xs-3">
 									      <input type="checkbox" name="area" class="global" ng-model='form.global'> Global
@@ -121,7 +133,7 @@
 									</div>	
 								</div>
 								<div class="row">
-									<p class='col-xs-offset-1'>Phương tiện Giao thông</p>
+									<p class='col-xs-offset-1'>Transportation</p>
 									<div class="vehicle col-xs-offset-2 text-center">
 										<label class="col-xs-3">
 									      <input type="checkbox" name="vehicle" class="road" ng-model='form.road'> Road 
@@ -142,19 +154,22 @@
 				<div class="money row">
 					<label class="col-xs-2 col-sm-1 control-label" >Money: </label>
 						<div class="col-xs-3">
-							<input class="out-money"  type = "text" value='{{computedTotal()}}' disabled/>
+							<input class="out-money"  type = "text" value='{{computedTotal() | currency:"$":0}}' disabled/>
 						</div>
 				</div>
 
 				<div class="row">
 					<label class="col-xs-6">
-				      <input type="checkbox" class="confirm" ng-checked="{{form.state}}"> Confirmation Sign
+				      <input type="checkbox" class="confirm" ng-checked="{{form.state}}" ng-model='form.state'> Confirmation Sign
 				    </label>
 				    <div class="col-xs-6">	
-				    	<button class="save btn btn-primary "> Save </button>
+				    	<button class="save btn btn-primary " ng-click="save()" ng-show="hide" ng-disabled=" myForm.fullname.$invalid || myForm.idCard.$invalid || myForm.phone.$invalid || myForm.numberDay.$invalid || checkDoup" > Save </button>
+
+				    	<button class="save btn btn-primary " ng-click="create()" ng-show="show" ng-disabled=" myForm.fullname.$invalid || myForm.idCard.$invalid || myForm.phone.$invalid || myForm.numberDay.$invalid || checkDoup"> Create </button>
+
 				    </div>
 				</div>
 			</div>
-		</div>
+		</form>
 	</div>
 </div>

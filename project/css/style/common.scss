@@ -67,6 +67,11 @@ a {
     content: "\f00d";
   }
 }
+.icon-google{
+  &:before {
+    content: "\f0d5";
+  }
+}
 @media (min-width: $screen-tablet) {
   .content-page {
     margin-top: 80px;

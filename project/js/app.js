@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ui.router']);
+var app = angular.module('app', ['ui.router', 'couchdb'] );
 
 angular.element(document).ready(function () {
     if (location.hash === '') {

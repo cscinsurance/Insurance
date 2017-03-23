@@ -29,7 +29,7 @@ app.directive('onFinishRender', function ($timeout) {
             if (scope.$last === true) {
                 $timeout(function () {
                     scope.$emit(attr.onFinishRender);
-                },100);
+                });
             }
         }
     }

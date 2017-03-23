@@ -4,6 +4,23 @@
 	</div>
 	<div class="container text-center">
 		<h2 class="title-travel"> Insurance policy list</h2>
+		<div class="popup__warpper">
+			<div class="popup">
+				<div class="popup__header">
+					<img src="images/logo1.png" class="img-responsive">
+				</div>
+				<div class="popup__content">
+					<p class="popup__title"> Are You Sure Remove Policy Insurance  ? </p>
+					<p class="popup__name"> Name: {{nameDelete}}</p>
+					<p class="popup__id"> ID Card: {{idDelete}}</p>
+					<p class="popup__phone"> Phone: {{phoneDelete}}</p>
+				</div>
+				<div class="row cox-xs-4 btn-wrapper">
+					<button class="btn btn-default col-xs-4" ng-click="deleteData()">Yes</button>
+					<button class="btn btn-default col-xs-4" ng-click="hide()">No</button>
+				</div>
+			</div>
+		</div>
 		<div class="content-travel row ">
 			<input type="text" ng-model='searchText' class="search-travel" placeholder="Search"> <a title = 'Creat' href="#{{url}}/" class="icon icon-plus plus"></a><br>
 			<div class='col-md-4' on-finish-render="ngRepeatFinished" ng-repeat="travelitem in travelList  | filter:searchText track by $index">
@@ -11,11 +28,11 @@
 					<div class='content' href='#'>
 						<p class='name'> <span> Name: </span> {{travelitem.name}} </p>
 						<p class='id-card'> <span> Id Card: </span> {{travelitem.id}} </p>
-						<p class='type-care'> <span>Type: </span> {{travelitem.type}}</p>
+						<p class='phone'> <span>Phone: </span> {{travelitem.phone}}</p>
 						<p class='sig'>{{travelitem.state | status}}</p>
 						<a class='edit' href="#{{url}}/{{travelitem.id}}" title="edit">Edit</a>
 					</div>
-					<button type='button' class="icon icon-delete delete" ng-click="remove($index)" ng-disabled="{{travelitem.state}}"></button>
+					<button type='button' class="icon icon-delete delete" ng-click="remove(travelitem, $index)" ng-disabled="travelitem.state"></button>
 				</div>
 			</div>
 		</div>
