@@ -1,56 +1,75 @@
-<section class="healthcss" >	
-	<!--<div class="slider">
-		<div class="slider__item" style="background-image: url('./images/suckhoe.jpg')">
-			<div class="container">
-				<div class="content">	
-					<h2 class="title"> Protect yout family with affordable health insurance
-					</h2>
-					<a href="#" title="View more" class="view-more"> View more</a>
-				</div>				
-			</div>
-		</div>
-		<div class="slider__item" style="background-image: url('./images/dulich.jpg')">
-			<div class="container">				
-				<div class="content">	
-					<h2 class="title"> Protect yout family with affordable health insurance
-					</h2>
-					<a href="#" title="View more" class="view-more"> View more</a>
-				</div>	
-			</div>
+    <div ng-controller="healthController">
+        <img src="./images/index-2.jpg" width=100% >
+        <p>Search: <input type="text" ng-model="search"></p>
+        <button onclick="location.href='/#/health-create'" style="float: right; width: 160px">ADD</button>
+        
+        <h2>DANH SÁCH: </h2>
+                <table  class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Họ Tên</th>
+                            <th>Số CMND</th>
+                            <th>Tình Trạng Hợp Đồng</th>
+                            <th>Điều chỉnh/ Xóa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Văn Cường</td>
+                            <td>21034</td>
+                            <td>Hợp đồng hoàn thành</td>
+                            <td>
+                                 <button>EDIT</button>
+                                <button>DELETE</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Hoài Mỹ</td>
+                            <td>34567</td>
+                            <td>Hợp đồng hoàn thành</td>
+                            <td>
+                                 <button>EDIT</button>
+                                <button>DELETE</button>
+                            </td>
+ 
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Quốc Minh</td>
+                            <td>35478</td>
+                            <td>Hợp đồng chưa hoàn thành</td>
+                            <td>
+                                 <button>EDIT</button>
+                                <button>DELETE</button>
+                            </td>
+ 
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Huy Phong</td>
+                            <td>67895</td>
+                            <td>Hợp đồng chưa hoàn thành</td>
+                            <td> 
+                                <button>EDIT</button>
+                                <button>DELETE</button>
+                            </td> 
+                        </tr>
 
-		</div>
-		<div class="slider__item" style="background-image: url('./images/oto.jpg')">
-			<div class="container">			
-				<div class="content">	
-					<h2 class="title"> Protect yout family with affordable health insurance
-					</h2>
-					<a href="# title="View more" class="view-more"> View more</a>
-				</div>	
-			</div>
-		</div>
-	</div>-->
-    <div ng-controller="healthctrl">
-        <h1> heal-care</h1>
-        <img src="./images/index-2.jpg" alt="Smiley face" width="1348px" >
+                        <tr>
+                            <td>5</td>
+                            <td>Lã Thanh Tuyền</td>
+                            <td>37489</td>
+                            <td>Hợp đồng hoàn thành</td>
+                            <td>
+                                <button>EDIT</button>
+                                <button>DELETE</button>
+                            </td>
+ 
+                        </tr>
+                        
+                    </tbody>
+                </table>
         <div>
-        <button onclick="location.href='/#/health-create'">ADD</button>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Ten</th>
-                        <th>So CMND</th>
-                        <th>Tinh Trang</th>
-                    </tr>
-                </thead>
-                <tbody >
-                    <tr>
-                        <td>{{cus.name}}</td>
-                        <td>{{cus.cmnd}}</td>
-                        <td>{{cus.status}}</td>
-                    </tr>
-                </tbody>
-            </table>
-            <!--<div ui-gird="gripOptions" ui-grid-pagination class="grid"></div>-->
-        </div>
-    </div>
-</section>
