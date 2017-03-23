@@ -1,3 +1,4 @@
+///--------------SilderController
 var silderController = app.controller('silderController', function ( $scope,$http) {
 
 	$http.get("data/insurance.json")
@@ -6,6 +7,7 @@ var silderController = app.controller('silderController', function ( $scope,$htt
 
 	});
 
+//--------------slider run when ng-repeat done------------------------
 	$scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
 		 	jQuery('.slider').slick({
 			  dots: true,
@@ -19,6 +21,7 @@ var silderController = app.controller('silderController', function ( $scope,$htt
 
 });
 
+//-----------footerController to handle bacn to top event-------------
 var footerController = app.controller('footerController', function ($scope) {
     ;(function($, window, undefined) {
 		var btnBackTop = jQuery('#btn-backtotop');
@@ -31,51 +34,130 @@ var footerController = app.controller('footerController', function ($scope) {
 	}(jQuery, window));
 });
 
-var travelController = app.controller('travelController', function ($scope, $http,$location,$filter) {
+//--------TravelController to handle event in travel-care block-------------------  
+var travelController = app.controller('travelController', function ($scope, $http,$location,$filter,couchdbService) {
 	$scope.url = $location.url();
-	
 
-		$scope.remove = function(i) {
-		    $scope.travelList.splice(i,1);
-		}
+		//-------------get data from couchDB-----------
+		couchdbService.getAllDocs().then(function(response){
+			var data = response[0]; 
+			$scope.travelList = [];
+		//--------convest oject data ---> array data-------- 
+			for(let prop in data) {
+				if((data[prop].id) != null && (data[prop].id)!= '') {
+					$scope.travelList.push(data[prop]);
+				}
+			}
 
-	$http.get("data/form.json")
-		.then(function(response) {
-	 	var ojNull = $filter('filter')(response.data, {id:''})[0];
-	 	$scope.travelList = jQuery.grep(response.data, function(value) {
-		  return value != ojNull;
+
+			$scope.remove = function(oj,i) {
+				var ojElemment = oj,
+					 popup = angular.element('.popup__warpper');
+
+				 $scope.nameDelete = ojElemment.name ;
+				 $scope.idDelete = ojElemment.id ;
+				 $scope.phoneDelete = ojElemment.phone ;
+
+					popup.show();
+					$scope.hide = function(){
+						popup.hide();
+					}
+					$scope.deleteData = function(){
+						popup.hide();
+					    $scope.travelList.splice(i,1);
+					    for(let key in data) {
+							if(data[key] == ojElemment) {
+								var prop = key;
+							}
+						}
+						delete data[prop];
+						couchdbService.save(data);
+					}
+
+			}
+
 		});
-	});
-	$scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
-		jQuery('.block-travel').find("button[ng-disabled='true']").css({'background':'black','box-shadow':'3px 3px 5px #888888'});
-		 
-	});
-
-	// 	$http.get(cloudbUrl"fe25d50914fb9b3b30ac9bb66c001fa6")
-	// 	.then(function(response) {
-	// 		console.log(JSON.stringify(response.data));
-
-	 	
-	// });
-
-
-
 });
 
-var travelformController = app.controller('travelformController', function ($scope, $http,$stateParams,$filter) {
-	$scope.id = $stateParams.id;
-	$http.get("data/form.json")
-	    .then(function(response) {
-	 		$scope.form = $filter('filter')(response.data, {id:$scope.id})[0];
+//-------TravelController to handle trave-form block----------------
 
-	 		var form =$scope.form;
-	  		var confirm = jQuery('.confirm'),
-	  			inputAre = (form.asean)+(form.asia)+(form.global),
-	  			inputTypeCare = (form.individual)+(form.group)+(form.family),
-	  			inputPackage = (form.classic)+(form.premier),
-	  			inputAreaTravel = (form.stability)+(form.instability),
-	  			inputTourism = (form.relax)+(form.discover)+(form.conquest),
-	  			inputVehicle = (form.road)+(form.warterway)+(form.airline);
+var travelformController = app.controller('travelformController', function ($scope, $http,$stateParams,$filter,couchdbService,$location) {
+	$scope.id = $stateParams.id;
+	$scope.show = false;
+	$scope.hide = false;
+	if($scope.id ==''){
+		$scope.show = true;
+	}else {
+		$scope.hide = true;
+		
+	}
+
+//----------------Individual value for Form
+	var dataInitialize = {
+					  "id": "",
+					  "name": "",
+					  "type": "",
+					  "phone": "",
+					  "days": "",
+					  "state": false,
+					  "asean": false,
+					  "asia": false,
+					  "global": false,
+					  "individual": false,
+					  "group": false,
+					  "family": false,
+					  "classic": false,
+					  "premier": false,
+					  "stability": false,
+					  "instability": false,
+					  "relax": false,
+					  "discover": false,
+					  "conquest": false,
+					  "road": false,
+					  "warterway": false,
+					  "airline": false
+					};
+//----------------Get Doc from ClouchDB----------------
+	couchdbService.getAllDocs().then(function(response){
+		var data = response[0];
+		var index;
+		var arrayIndex = [];
+//------------------Get Value Oject in data Oject-----------prop:   		
+		for(var prop in data) {
+			arrayIndex.push(data[prop].id); // set all Id card in array
+			if((data[prop].id) == $scope.id) 
+			{ 
+				index = prop;
+				$scope.form = data[prop];
+			}
+		}
+			
+ 		var form = $scope.form;
+
+ //---- check ID card Exits ?--------------------------
+		$scope.change = function() {
+			if ( (arrayIndex.indexOf( form.id ) > -1) ) {
+				$scope.checkDoup = true;
+
+				if(form.id == null){ 
+					$scope.checkDoup = false;
+				}
+			}else {
+				$scope.checkDoup = false;
+			}
+
+			
+		};
+
+
+//---------------------------------- Check 'Confirm' and checkBok-------------------------------
+  		var confirm = jQuery('.confirm'),
+  			inputAre = (form.asean)+(form.asia)+(form.global),
+  			inputTypeCare = (form.individual)+(form.group)+(form.family),
+  			inputPackage = (form.classic)+(form.premier),
+  			inputAreaTravel = (form.stability)+(form.instability),
+  			inputTourism = (form.relax)+(form.discover)+(form.conquest),
+  			inputVehicle = (form.road)+(form.warterway)+(form.airline); 
 
 
 	 	if($scope.form.state){
@@ -103,7 +185,7 @@ var travelformController = app.controller('travelformController', function ($sco
 	  			jQuery('.vehicle').find('input[name="vehicle"]').attr('disabled', true);
 	  		}
 	 	}
-
+//------------------------------Check input checkBox for total Money
 	 	 $scope.computedTotal = function () {
 	 	 	var total = 100;
 		      total += (form.asean ? 100 : 0) + (form.asia ? 200 : 0) + (form.global ? 300 : 0);
@@ -114,17 +196,32 @@ var travelformController = app.controller('travelformController', function ($sco
 		      total += (form.road ? 100 : 0) + (form.warterway ? 200 : 0) + (form.airline ? 300 : 0);
 		     return total;
 		  }
+//--------------------Bound Only one input checked---------
+		//  (Wait update code ^_^) 
 
-		 
+//--------------------- save Data-------------------------
+		 $scope.save= function() {
+		 	data[index] = $scope.form;
+		 	couchdbService.save(data);
+		 	window.history.back();
+		}
 
-	
+		$scope.create= function() {
+			var d = new Date(),
+    			n = d.getTime();
+		 	data[n] = $scope.form;
+		 	data[0] = dataInitialize;
+		 	couchdbService.save(data);
+		 	window.history.back();
+		}
 
+			
 	});
-
 
 });
 
-var homeControler = app.controller('homeController', function ( $scope, $http) {
+//-----HomeControler to handle home page ----------------------------
+var homeControler = app.controller('homeController', function ( $scope, $http, couchdbService) {
 
 	$http.get("data/insurance.json")
 		.then(function(response) {
@@ -187,9 +284,4 @@ var healthctrl = app.controller('healthctrl', function($scope){
 	// 	]
 
 	// };
-
-
-	
-
-
 });

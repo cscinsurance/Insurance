@@ -1,17 +1,30 @@
 [
-    {
-        "id": "",
-        "name": "",
-        "type": "",
-        "phone" : "",
-        "days" : "",
-        "state": false,
-        "money" : ""
+   {
+      "id": "",
+      "name": "",
+      "phone": "",
+      "days": "",
+      "state": false,
+      "asean": false,
+      "asia": false,
+      "global": false,
+      "individual": false,
+      "group": false,
+      "family": false,
+      "classic": false,
+      "premier": false,
+      "stability": false,
+      "instability": false,
+      "relax": false,
+      "discover": false,
+      "conquest": false,
+      "road": false,
+      "warterway": false,
+      "airline": false
     },
     {
         "id": "241111",
-        "name": " Nguyễn Huy Tuấn",
-        "type": "Cá nhân",
+        "name": " Nguyen Huy Tuan",
         "phone" : "0977263117",
         "days" : "5",
         "state": true,
@@ -20,7 +33,7 @@
         "asia" : true,
         "global": false,
 
-        "individual" : true,
+        "individual" : false,
         "group" : false,
         "family":false,
 
@@ -40,9 +53,8 @@
     },
     {
         "id": "2412133",
-        "name": " Đào Đức Đồng",
+        "name": " Dao Duc Dong",
         "type": "Nhóm",
-        "sig" : "Chưa ký",
         "phone" : "093041344",
         "days" : "5",
         "state": false,
@@ -61,7 +73,7 @@
         "stability" : true,
         "instability" : false,
 
-        "relax": true,
+        "relax": false,
         "discover": false,
         "conquest": false,
 
@@ -71,8 +83,7 @@
     }, 
     {
         "id": "3421413",
-        "name": "Nguyễn Huy Vũ",
-        "type": "Gia Đình",
+        "name": "Nguyen Huy Vu",
         "phone" : "09431317",
         "days" : "2",
         "state": true,
@@ -102,8 +113,7 @@
     },
     {
         "id": "54514",
-        "name": "Đào Hoàng Đức",
-        "type": "Cá Nhân",
+        "name": "Dao Hoang Duc",
         "phone" : "0912414211",
         "days" : "5",
         "state": true,
@@ -132,8 +142,7 @@
     },
     {
         "id": "91234415",
-        "name": "Đăng văn Bi",
-        "type": "Cá Nhân",
+        "name": "Dang Van Bui",
         "phone" : "0312333117",
         "days" : "5",
         "state": true,
@@ -162,8 +171,7 @@
     },
     {
         "id": "412477",
-        "name": "Trần văn Linh",
-        "type": "Gia Đình",
+        "name": "Tran Van Linh",
         "phone" : "097712311",
         "days" : "8",
         "state": true,
@@ -192,8 +200,7 @@
     },
     {
         "id": "1235447",
-        "name": "Bùi văn Bách",
-        "type": "Nhóm",
+        "name": "Bui Van Bach",
         "phone" : "0993263117",
         "days" : "10",
         "state": false,

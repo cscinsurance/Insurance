@@ -40,6 +40,9 @@ a {
 .icon-delete:before {
   content: "\f00d"; }
 
+.icon-google:before {
+  content: "\f0d5"; }
+
 @media (min-width: 768px) {
   .content-page {
     margin-top: 80px; } }
@@ -87,6 +90,13 @@ header {
 
 .menu__item a {
   font-size: 20px; }
+
+.icon-socail {
+  text-align: center; }
+  .icon-socail span {
+    font-size: 20px; }
+  .icon-socail li {
+    display: inline-block; }
 
 .menu {
   padding-left: 30px; }
@@ -269,7 +279,7 @@ header {
   .info__contact .social {
     font-size: 30px; }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .info__contact {
     padding: 20px 0; }
     .info__contact span {
@@ -286,6 +296,9 @@ header {
     font-size: 50px;
     font-family: fantasy;
     color: #232e64; }
+  .travel-wrapper .mes-error {
+    color: red;
+    font-family: cursive; }
 
 .banner-travel {
   background-size: cover;
@@ -333,7 +346,8 @@ header {
   position: relative;
   color: #efec9f;
   box-shadow: 10px 10px 5px #888888;
-  transition: all .5s; }
+  transition: all .5s;
+  border-radius: 5px; }
   .block-travel:hover {
     transform: translateY(5px);
     box-shadow: 3px 3px 5px #888888; }
@@ -353,9 +367,12 @@ header {
       font-size: 25px; }
     .block-travel .delete:focus {
       outline: none; }
+    .block-travel .delete:disabled {
+      background: black;
+      cursor: not-allowed; }
   .block-travel .name span,
   .block-travel .id-card span,
-  .block-travel .type-care span {
+  .block-travel .phone span {
     font-weight: bold;
     color: black; }
   .block-travel .sig {
@@ -373,6 +390,67 @@ header {
     .block-travel .edit:focus {
       outline: none; }
 
+@-webkit-keyframes animatetop {
+  from {
+    top: 0%;
+    opacity: 0; }
+  to {
+    top: 50%;
+    opacity: 1; } }
+@keyframes animatetop {
+  from {
+    top: 0;
+    opacity: 0; }
+  to {
+    top: 50%;
+    opacity: 1; } }
+.popup {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #2f3d86;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 18px;
+  color: blanchedalmond;
+  animation-name: animatetop;
+  animation-duration: 0.4s; }
+  .popup__header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .popup button {
+    display: block;
+    margin: 10px;
+    color: #2f3d86;
+    font-weight: bold;
+    font-family: cursive; }
+  .popup .btn-wrapper {
+    max-width: 70%;
+    margin-left: 40%; }
+  .popup__warpper {
+    display: none;
+    z-index: 3;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(44, 45, 45, 0.87); }
+  .popup__content {
+    text-align: left; }
+  .popup__title {
+    text-align: center;
+    font-family: cursive;
+    padding: 10px 0;
+    color: yellow; }
+  .popup__name, .popup__id, .popup__phone {
+    margin-left: 13px;
+    font-size: 15px;
+    font-family: monospace; }
+
 @media (max-width: 767px) {
   .travel-wrapper .title-travel {
     font-size: 35px; }
@@ -388,7 +466,19 @@ header {
     width: 60%;
     margin: 20px 0 20px; }
     .search-travel:focus {
-      width: 80%; } }
+      width: 80%; }
+
+  .popup {
+    padding: 10px;
+    font-size: 14px; }
+    .popup button {
+      padding: 5px;
+      margin: 3px;
+      font-size: 12px; }
+    .popup__title {
+      padding: 5px 0; }
+    .popup__name, .popup__id, .popup__phone {
+      font-size: 12px; } }
 .product-auto-banner {
   height: 225px;
   background: url("/images/autocare/product_banner.jpg") no-repeat center center;
@@ -423,6 +513,9 @@ header {
 
 .money {
   margin-bottom: 40px; }
+  .money input {
+    text-align: center;
+    font-weight: bold; }
 
 .info-title {
   font-family: cursive;
