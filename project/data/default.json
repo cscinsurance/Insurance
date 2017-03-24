@@ -1,0 +1,26 @@
+[
+  {
+    "id": "",
+    "name": "",
+    "type": "",
+    "phone": "",
+    "days": "",
+    "state": false,
+    "asean": false,
+    "asia": false,
+    "global": false,
+    "individual": false,
+    "group": false,
+    "family": false,
+    "classic": false,
+    "premier": false,
+    "stability": false,
+    "instability": false,
+    "relax": false,
+    "discover": false,
+    "conquest": false,
+    "road": false,
+    "warterway": false,
+    "airline": false
+  }
+]

@@ -1,7 +1,8 @@
 <div class="col-lg-12 product-auto-banner">
 </div>
-<br>
+
 <div class="container">
+    <h1 class="introduce text-center ">Introduce</h1>
     <div class="product-auto-description">
         <p>Auto insurance protects you against financial loss if you have an accident. It is a contract between you and the insurance company. You agree to pay the premium and the insurance company agrees to pay your losses as defined in your policy. Auto
             insurance provides property, liability and medical coverage:</p>
@@ -13,197 +14,55 @@
         <p>An auto insurance policy is comprised of six different kinds of coverage. Most states require you to buy some, but not all, of these coverages. If you're financing a car, your lender may also have requirements. Most auto policies are for six months
             to a year. Your insurance company should notify you by mail when it’s time to renew the policy and to pay your premium.</p>
     </div>
-    <h3>Insurance Contract
-    </h3>
-    <!--<form class="form-inline">
-        <div class="form-recommend">
-            <h3>Insurance Contract</h3>
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control" id="searchs" placeholder="Enter Name or ID">
-            <button type="submit" class="btn btn-primary">Search</button>
-            <button type="submit" class="btn btn-success">Create</button>
-        </div>
-    </form>-->
+    <button type="button" class="btn btn-info center-block collapse btn-lg " data-toggle="collapse" data-target="#demo">Show/Hide Insurance Contract</button>
     <br>
+    <div id="demo" class="collapse">
+        <h3 class="contract text-center">Insurance Contract</h3>
+        <div class="createform">
+            <a href="#/car-form">
+                <button type="button" class=" btn btn-success center-block btn-lg " value="Create"><span class="glyphicon glyphicon-plus-sign"></span> Create</button>
+            </a>
+        </div>
+        <div class="auto-search">
+            <label>Search:</label>
+            <input type="text" ng-model='searchBox' class="search" placeholder="Enter the information">
+        </div>
+        <!--View <select ng-model="viewBy" ng-change="setItemsPerPage(viewby)"><option>10</option><option>20</option><option>30</option></select> entries.-->
 
-    <!--<div class="table-responsive">
-        <table class="table table-striped">
+        <br>
+        <table class="table table-striped table-hover table-bordered" id="mydata">
             <thead>
                 <tr>
-                    <th>Status</th>
-                    <th>Name</th>
-                    <th>ID</th>
-                    <th>Insurance</th>
+                    <th ng-click="sort('id')" class="text-center">ID
+                        <span class="glyphicon sort-icon" ng-show="sortKey =='id'" ng-class="{'glyphicon-sort-by-attributes-alt':reverse,'glyphicon-sort-by-attributes':!reverse}"></span>
+                    </th>
+                    <th ng-click="sort('name')" class="text-center">Name
+                        <span class="glyphicon sort-icon" ng-show="sortKey =='name'" ng-class="{'glyphicon-sort-by-attributes-alt':reverse,'glyphicon-sort-by-attributes':!reverse}"></span>
+                    </th>
+                    <th ng-click="sort('insurance')" class="text-center">Insurance
+                        <span class="glyphicon sort-icon" ng-show="sortKey =='insurance'" ng-class="{'glyphicon-sort-by-attributes-alt':reverse,'glyphicon-sort-by-attributes':!reverse}"></span>
+                    </th>
+                    <th ng-click="sort('status')" class="text-center">Status
+                        <span class="glyphicon sort-icon" ng-show="sortKey =='status'" ng-class="{'glyphicon-sort-by-attributes-alt':reverse,'glyphicon-sort-by-attributes':!reverse}"></span>
+                    </th>
+                    <th class="text-center">Action
+                    </th>
                 </tr>
             </thead>
+
             <tbody>
-                <tr>
-                    <td>Signed</td>
-                    <td>Dr Dre</td>
-                    <td>123456</td>
-                    <td>Material, Spare, Water</td>
-                </tr>
-                <tr>
-                    <td>Pending</td>
-                    <td>Eminem</td>
-                    <td>67890</td>
-                    <td>Spare, Water</td>
+                <tr ng-repeat="autoitem in autoList | filter:searchBox | orderBy:sortKey:reverse">
+                    <th class="text-center ">{{autoitem.id}}</th>
+                    <th class="text-center">{{autoitem.name}}</th>
+                    <th class="text-center">{{autoitem.insurance}}</th>
+                    <th class="text-center ">{{autoitem.status}}</th>
+                    <th class="text-center">
+                        <button type="button" value="Edit" class="btn btn-warning" ng-click=""><span class="glyphicon glyphicon-edit"></span> Edit</button>
+                        <button type="button" value="Delete" class="btn btn-danger  fa-trash" ng-click="delete($index)" <span class="glyphicon glyphicon-trash"></span> Delete</button>
+                    </th>
                 </tr>
             </tbody>
-    </div>-->
-    <table class="table table-striped table-hover table-bordered" id="mydata">
-        <thead>
-            <tr>
-                <th>Status</th>
-                <th>Name</th>
-                <th>ID</th>
-                <th>Insurance</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            <tr>
-                <th>Signed</th>
-                <th>SnoopDogg</th>
-                <th>123456</th>
-                <th>Water, Spare</th>
-            </tr>
-            <tr>
-                <th>Pending</th>
-                <th>Eminem</th>
-                <th>789456</th>
-                <th>Material, Water, Spare</th>
-            </tr>
-            <tr>
-                <th>Signed</th>
-                <th>50 Cent</th>
-                <th>24680</th>
-                <th>Spare</th>
-            </tr>
-            <tr>
-                <th>Pending</th>
-                <th>Tupac Shakur</th>
-                <th>13579</th>
-                <th>Water</th>
-            </tr>
-            <tr>
-                <th>Signed</th>
-                <th>The Notorious B.I.G</th>
-                <th>97531</th>
-                <th>Water, Spare</th>
-            </tr>
-            <tr>
-                <th>Pending</th>
-                <th>Eazy-E</th>
-                <th>84620</th>
-                <th>Material, Water, Spare</th>
-            </tr>
-            <tr>
-                <th>Signed</th>
-                <th>NateDogg</th>
-                <th>01234</th>
-                <th>Material, Spare</th>
-            </tr>
-            <tr>
-                <th>Pending</th>
-                <th>Pitbull</th>
-                <th>123321</th>
-                <th>Water</th>
-            </tr>
-            <tr>
-                <th>Signed</th>
-                <th>Ice Cube</th>
-                <th>456654</th>
-                <th>Water, Spare</th>
-            </tr>
-            <tr>
-                <th>Pending</th>
-                <th>T.I</th>
-                <th>789987</th>
-                <th>Spare</th>
-            </tr>
-            <tr>
-                <th>Signed</th>
-                <th>Lil Wayne</th>
-                <th>246642</th>
-                <th>Material, Water</th>
-            </tr>
-            <tr>
-                <th>Pending</th>
-                <th>Wiz Khalifa</th>
-                <th>468864</th>
-                <th>Material, Water, Spare</th>
-            </tr>
-            <tr>
-                <th>Signed</th>
-                <th>Jay-Z</th>
-                <th>135531</th>
-                <th>Material</th>
-            </tr>
-            <tr>
-                <th>Pending</th>
-                <th>Drake</th>
-                <th>135246</th>
-                <th>Spare</th>
-            </tr>
-            <tr>
-                <th>Signed</th>
-                <th>Kayne West</th>
-                <th>579975</th>
-                <th>Water</th>
-            </tr>
-            <tr>
-                <th>Pending</th>
-                <th>Akon</th>
-                <th>246135</th>
-                <th>Material, Water, Spare</th>
-            </tr>
-            <tr>
-                <th>Signed</th>
-                <th>Chris Brown</th>
-                <th>123798</th>
-                <th>Material, Water</th>
-            </tr>
-            <tr>
-                <th>Pending</th>
-                <th>Diddy</th>
-                <th>789123</th>
-                <th>Material, Spare</th>
-            </tr>
-            <tr>
-                <th>Signed</th>
-                <th>Nelly</th>
-                <th>123987</th>
-                <th>Water, Spare</th>
-            </tr>
-            <tr>
-                <th>Pending</th>
-                <th>D.R.E</th>
-                <th>654321</th>
-                <th>Spare</th>
-            </tr>
-            <tr>
-                <th>Signed</th>
-                <th>Usher</th>
-                <th>987321</th>
-                <th>Water</th>
-            </tr>
-            <tr>
-                <th>Pending</th>
-                <th>Ludacris</th>
-                <th>654789</th>
-                <th>Material</th>
-            </tr>
-            <tr>
-                <th>Signed</th>
-                <th>Pharell Williams</th>
-                <th>321456</th>
-                <th>Material</th>
-            </tr>
-        </tbody>
-    </table>
+        </table>
+        <pagination total-items="autoList.length" ng-model='currentPage' items-per-page="pageSize"></pagination>
+    </div>
 </div>
-<script>
-    $('#mydata').dataTable();
-</script>

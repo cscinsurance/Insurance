@@ -26,9 +26,16 @@ app.config(function ($stateProvider) {
         
     });
 
-     $stateProvider.state('product', {
+  $stateProvider.state('car', {
         url: '/car-care',
-        templateUrl: 'block/car-care.html'
+        templateUrl: 'block/car-care.html',
+        controller: 'autoController'
+    });
+
+    $stateProvider.state('carform', {
+        url: '/car-form',
+        templateUrl: 'block/car-form.html',
+        controller: 'autoformController'
     });
 
      $stateProvider.state('healthcare', {
