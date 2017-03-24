@@ -83,8 +83,11 @@ var travelController = app.controller('travelController', function ($scope, $htt
 
 var travelformController = app.controller('travelformController', function ($scope, $http,$stateParams,$filter,couchdbService,$location) {
 	$scope.id = $stateParams.id;
+
+//-----show hide but ton save or creat-------- 
 	$scope.show = false;
 	$scope.hide = false;
+
 	if($scope.id ==''){
 		$scope.show = true;
 	}else {
@@ -231,57 +234,19 @@ var homeControler = app.controller('homeController', function ( $scope, $http, c
 
 });
 
-var healthctrl = app.controller('healthctrl', function($scope){
-	this.list = lists;
-
-	var lists = [
-            {
-						name: "ABC",
-						cmnd: "1111111111",
-						status: "",
-        },
-            {
-						name: "B",
-						cmnd: "22222222",
-						status: "",
-        },
-				            {
-						name: "C",
-						cmnd: "33333333333",
-						status: "",
-        },
-				            {
-						name: "D",
-						cmnd: "4444444444444",
-						status: "",
-        },
-				            {
-						name: "E",
-						cmnd: "555555555555",
-						status: "",
-        },
-    ];
-	//  $scope.highlightFilteredHeader = function( row, rowRenderIndex, col, colRenderIndex ) {
-  //           if( col.filters[0].term ){
-  //           return 'header-filtered';
-  //           } else {
-  //           return '';
-  //           }
-  //       };
-
-	// 	$scope.gripOptions = {
-	// 		enableFiltering: true,
-	// 		onRegisterApi: function(gridApi){
-	// 			$scope.gridApi = gridApi;
-	// 		},
-
-	// 	paginationPageSizes: [1, 5, 10, 15, 20],
-	// 	paginationPageSizes: 5,
-	// 	columnDefs: [
-	// 		{field: 'name', displayName: 'Ten', headerCellClass: $scope.highlightFilteredHeader},
-	// 		{field: 'cmnd', displayName: 'So CMND',headerCellClass: $scope.highlightFilteredHeader},
-  //     {field: 'status', displayName: 'Tinh Trang',headerCellClass: $scope.highlightFilteredHeader},
-	// 	]
-
-	// };
+//auto
+var autoController = app.controller('autoController', function($scope, $http, $stateParams, $location) {
+    $scope.pageSize = 5;
+    $scope.currentSize = 1;
+    $http.get("data/form-auto.json")
+        .then(function(response) {
+            $scope.autoList = response.data;
+        });
+    $scope.delete = function(i) {
+        $scope.autoList.splice(i, 1);
+    };
+    $scope.sort = function(keyname) {
+        $scope.sortKey = keyname;
+        $scope.reverse = !$scope.reverse;
+    }
 });
